@@ -199,11 +199,83 @@ footer{margin-top:36px;padding:20px 0;color:#94a0b7;border-top:1px solid #252b39
 </div>
 
 <footer>
-  <div class="foot">
-    <div>© 2025 Health Nutra Deals • All rights reserved.</div>
-    <div>Contact: <a href="mailto:support@healthnutradeals.com">support@healthnutradeals.com</a></div>
   </div>
-</footer>
-</div>
+
+    <!-- Social Proof -->
+    <h2 class="section-title">What Customers Say</h2>
+    <div class="grid">
+      <div class="card" style="grid-column:span 12">
+        <div class="card-inner" style="grid-template-columns:1fr 1fr 1fr">
+          <div>
+            <h3>“Holiday gut reset!”</h3>
+            <p>“Bioma made a huge difference—less bloating even with party food. Feeling lighter!” — <strong>Elisa (UK)</strong></p>
+          </div>
+          <div>
+            <h3>“Calm & deep sleep”</h3>
+            <p>“Golden Farms CBD helped me switch off at night. Woke up ready for the day.” — <strong>Mark (US)</strong></p>
+          </div>
+          <div>
+            <h3>“New Year kick-start”</h3>
+            <p>“BurnBlend + walks = steady energy and visible change by January.” — <strong>Rachel (AU)</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <h2 class="section-title" id="faq">FAQs</h2>
+    <details>
+      <summary>Which countries do you serve?</summary>
+      <p>We serve customers in the USA, UK, Australia, and Canada. Shipping times vary by region.</p>
+    </details>
+    <details>
+      <summary>How long are Christmas deals active?</summary>
+      <p>Deals run through the Christmas period and may end early if stock sells out. The countdown above shows the main promotion window.</p>
+    </details>
+    <details>
+      <summary>Are these products safe to use together?</summary>
+      <p>Most customers choose one main goal (e.g., weight loss or gut health). If you combine products, follow label directions and consult your healthcare professional if needed.</p>
+    </details>
+
+    <footer>
+      <div class="foot">
+        <div>© 2025 Health Nutra Deals • All rights reserved.</div>
+        <div>Contact: <a href="mailto:support@healthnutradeals.com">support@healthnutradeals.com</a></div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Cookie Bar -->
+  <div class="cookie" id="cookie">
+    <p>We use cookies to improve your browsing and measure campaign performance. By using this site, you agree to our cookie policy.</p>
+    <button class="ok" onclick="document.getElementById('cookie').remove()">OK</button>
+  </div>
+
+  <!-- JS: Countdown + small helpers -->
+  <script>
+    // Countdown to Dec 25, 2025 23:59:59
+    (function(){
+      const end = new Date('2025-12-25T23:59:59Z').getTime();
+      const d=document.getElementById('d'),h=document.getElementById('h'),
+            m=document.getElementById('m'),s=document.getElementById('s');
+      function tick(){
+        const now = new Date().getTime();
+        let diff = Math.max(0, end - now);
+        const dd = Math.floor(diff/(1000*60*60*24));
+        diff -= dd*24*60*60*1000;
+        const hh = Math.floor(diff/(1000*60*60));
+        diff -= hh*60*60*1000;
+        const mm = Math.floor(diff/(1000*60));
+        diff -= mm*60*1000;
+        const ss = Math.floor(diff/1000);
+        d.textContent = String(dd).padStart(2,'0');
+        h.textContent = String(hh).padStart(2,'0');
+        m.textContent = String(mm).padStart(2,'0');
+        s.textContent = String(ss).padStart(2,'0');
+      }
+      tick(); setInterval(tick,1000);
+    })();
+  </script>
 </body>
 </html>
+
